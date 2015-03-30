@@ -2,7 +2,7 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p(class="status")
 
   div(class="btn-group", role="group")
     button(type="button", class="btn btn-default switch-on")エアコンON
@@ -22,6 +22,7 @@ block content
         data: data,
         success: function() {
           console.log('switch-on success');
+          $('.status').text('エアコンをonしました。');
         }
      });
     });
@@ -34,6 +35,7 @@ block content
         data: data,
         success: function() {
           console.log('switch-off success');
+          $('.status').text('エアコンをoffしました。');
         }
      });
     });
